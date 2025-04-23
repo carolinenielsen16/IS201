@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0eaff; /* soft lavender */
+            color: #2c2c38; /* deep slate gray */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #ff6b6b; /* coral */
+            margin-bottom: 20px;
+        }
+
+        .joke-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2); /* coral shadow */
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .joke {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        button {
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e25555;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Joke Generator</h1>
+    <div class="joke-container">
+        <p class="joke">Click the button to get a random joke!</p>
+    </div>
+    <button onclick="generateJoke()">Generate Joke</button>
+
+    <footer>
+        <p>Made by Caroline Nielsen & AI</p>
+        <a href="../index.html">Back to Resume</a>
+    </footer>
+
+    <script>
+        const jokes = [
+            "Why did the math book look sad? Because it had too many problems.",
+            "Parallel lines have so much in common... it’s a shame they’ll never meet.",
+            "I told my suitcase we wouldn’t be going on vacation this year. Now I’m dealing with emotional baggage.",
+            "What do you call a fish wearing a bowtie? Sofishticated.",
+            "I only know 25 letters of the alphabet. I don’t know y.",
+            "I used to play piano by ear, but now I use my hands.",
+            "Why do bees have sticky hair? Because they use honeycombs.",
+            "What’s orange and sounds like a parrot? A carrot.",
+            "I stayed up all night wondering where the sun went... then it dawned on me.",
+            "Why can’t you give Elsa a balloon? Because she’ll let it go!"
+        ];
+
+        function generateJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            document.querySelector('.joke').textContent = jokes[randomIndex];
+        }
+    </script>
+</body>
+</html>
